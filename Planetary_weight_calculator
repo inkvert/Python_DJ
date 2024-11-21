@@ -1,5 +1,14 @@
-#A program which takes user input of a weight and a plant and calculates their adjusted weight on that planet (to two decimal places).
+"""
+Planetary Weight Calculator
 
+A program which takes user input of a weight and a plant and calculates their adjusted weight on that planet (to two decimal places)
+Possible changes:
+1) Fix case sensitive issues for input_planet
+2) Fix crashes for incorret input_planet
+3) Test edge cases for input_weight (0, wrong case, etc.)
+"""
+
+#Percentages to apply to weight for different planets.
 MARS_PERCENT = 37.8
 JUPITER_PERCENT = 236.0
 SATURN_PERCENT = 108.1
@@ -28,7 +37,7 @@ def main():
     #Returns a weight based on the name of the planet inputed.
     if input_planet == "Mars":
         print("Your weight on Mars is", rounded_mars_weight) 
-    if input_planet == "Jupiter"
+    if input_planet == "Jupiter":
         print("Your weight on Jupiter is", rounded_jupiter_weight) 
     if input_planet == "Saturn":
         print("Your weight on Saturn is", rounded_saturn_weight) 
