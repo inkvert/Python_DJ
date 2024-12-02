@@ -13,14 +13,15 @@ LOWEST_ROLL = 1
 HIGHEST_ROLL = 100
 
 # Constant which defines the maximum score in the game before it ends
-SCORE_LIMIT= 3
+SCORE_LIMIT = 3
+
 
 def main():
     # Dictionary which records the round number, user score and computer score
     game_state = {
-    "round_number": 1,
-    "user_score": 0,
-    "computer_score": 0
+        "round_number": 1,
+        "user_score": 0,
+        "computer_score": 0
     }
 
     # Prints a welcome message
@@ -28,15 +29,15 @@ def main():
     print("Welcome to the High-Low Game!")
     print("----------------------------")
     print(end='\n')
-    
-    # Loops the game until a score limit is met 
-    while game_state["user_score"] <SCORE_LIMIT and game_state["computer_score"]<SCORE_LIMIT:
+
+    # Loops the game until a score limit is met
+    while game_state["user_score"] < SCORE_LIMIT and game_state["computer_score"] < SCORE_LIMIT:
         print("Round:", game_state["round_number"])
         print(end='\n')
 
         # Calculates a random integer between 1 and 100 for the user and the computer
-        your_number = random.randint(LOWEST_ROLL,HIGHEST_ROLL)
-        computer_number = random.randint(LOWEST_ROLL,HIGHEST_ROLL)
+        your_number = random.randint(LOWEST_ROLL, HIGHEST_ROLL)
+        computer_number = random.randint(LOWEST_ROLL, HIGHEST_ROLL)
 
         # The user is told their number...
         print("Your number is:", your_number)
@@ -67,7 +68,7 @@ def main():
             print("Computer score is:", game_state["computer_score"])
             print(end='\n')
         # If user guess was higher and user number is lower:
-        elif your_guess ==  "higher" and computer_number > your_number:
+        elif your_guess == "higher" and computer_number > your_number:
             print("You were wrong! The computer's number was:", computer_number)
             print(end='\n')
             # Increases round number and computer score by one and prints scores
@@ -77,7 +78,7 @@ def main():
             print("Computer score is:", game_state["computer_score"])
             print(end='\n')
         # If user guess was lower and user number is higher:
-        elif your_guess ==  "lower" and your_number > computer_number:
+        elif your_guess == "lower" and your_number > computer_number:
             print("You were wrong! The computer's number was:", computer_number)
             print(end='\n')
             # Increases round number and computer score by one and prints scores
@@ -87,7 +88,7 @@ def main():
             print("Computer score is:", game_state["computer_score"])
             print(end='\n')
         # If user number was tied with computer number:
-        else:
+        elif your_number == computer_number:
             print("Tie! The computer's number was also:", computer_number)
             print(end='\n')
             # Increases round number by one and prints scores
@@ -95,10 +96,13 @@ def main():
             print("Your score is:", game_state["user_score"])
             print("Computer score is:", game_state["computer_score"])
             print(end='\n')
+        else:
+            print("Something went wrong. Try again?")
+            print(end='\n')
 
-    if game_state["user_score"]>=SCORE_LIMIT:
+    if game_state["user_score"] >= SCORE_LIMIT:
         print("Congratulations! You beat the computer.")
-    elif game_state["computer_score"]>=SCORE_LIMIT:
+    elif game_state["computer_score"] >= SCORE_LIMIT:
         print("Unlucky. The computer beat you.")
 
 if __name__ == "__main__":
