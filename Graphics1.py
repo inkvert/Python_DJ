@@ -1,3 +1,5 @@
+#Guide to importing graphics/canvas: https://web.stanford.edu/class/archive/cs/cs106a/cs106a.1238/references/graphics/
+
 from graphics import Canvas
 
 import random
